@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>DCCS Travel Requests</title>
     <style>
-        html, body, body > div, #container, #container-uiarea {
-            height: 100%;
-        }
+      html,
+      body,
+      body > div,
+      #container,
+      #container-uiarea {
+        height: 100%;
+      }
     </style>
     <script
-        id="sap-ui-bootstrap"
-        src="resources/sap-ui-core.js"
-        data-sap-ui-theme="sap_fiori_3"
-        data-sap-ui-resourceroots='{
+      id="sap-ui-bootstrap"
+      src="resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_fiori_3"
+      data-sap-ui-resourceroots='{
             "dccstravelrequests": "./"
         }'
-        data-sap-ui-compatVersion="edge"
-        data-sap-ui-async="true"
-        data-sap-ui-frameOptions="trusted"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-async="true"
+      data-sap-ui-frameOptions="trusted"
     ></script>
-    <script id="locate-reuse-libs" src="./utils/locate-reuse-libs.js"
-        data-sap-ui-manifest-uri="./manifest.json"
-        data-sap-ui-componentName="dccstravelrequests">
-    </script> 
-</head>
-<body class="sapUiBody sapUiSizeCompact" id="content">
+    <script
+      id="locate-reuse-libs"
+      src="./utils/locate-reuse-libs.js"
+      data-sap-ui-manifest-uri="./manifest.json"
+      data-sap-ui-componentName="dccstravelrequests"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-auth-compat.js"></script>
+  </head>
+  <body class="sapUiBody sapUiSizeCompact" id="content">
     <div
-        data-sap-ui-component
-        data-name="dccstravelrequests"
-        data-id="container"
-        data-settings='{"id" : "dccstravelrequests"}'
-        data-handle-validation="true"
+      data-sap-ui-component
+      data-name="dccstravelrequests"
+      data-id="container"
+      data-settings='{"id" : "dccstravelrequests"}'
+      data-handle-validation="true"
     ></div>
-</body>
+  </body>
 </html>
