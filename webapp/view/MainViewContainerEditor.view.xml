@@ -1,0 +1,28 @@
+<mvc:View controllerName="dccstravelrequests.controller.MainViewContainer"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:tnt="sap.tnt"
+ 	xmlns:l="sap.ui.layout">
+	
+  	<tnt:ToolPage>
+  		<tnt:header>
+			<tnt:ToolHeader>
+    			<l:HorizontalLayout class="sapUiContentPadding">
+					<Title text="{i18n>PageName}"
+       				level="H2"/>
+        		</l:HorizontalLayout>
+     		 	<ToolbarSpacer/>
+       			<Button
+       				id="userButton"
+       				icon="sap-icon://employee"
+					text="{i18n>Logout}"
+					press=".logoutUser">
+				</Button>
+			</tnt:ToolHeader>
+		</tnt:header> 
+  		<tnt:mainContents>
+			<mvc:XMLView viewName="dccstravelrequests.view.RequestListEditor"/>
+  		</tnt:mainContents> 
+ 	</tnt:ToolPage>
+</mvc:View>

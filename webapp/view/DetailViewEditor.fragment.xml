@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m"
+   	xmlns:core="sap.ui.core" 
+	xmlns:c="sap.ui.core" 
+  	xmlns:l="sap.ui.layout"
+   	xmlns:f="sap.ui.layout.form"
+   	xmlns:ui="sap.ui"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<Dialog title="Detail of travel request">
+		<f:SimpleForm id="edit">
+			<f:content>
+				<Label text="Hotel"/>
+				<Input value="{data/hotelName}" 
+					placeholder="Input hotel name"/>
+				<Label text="Hotel adress"/>
+				<Input value="{data/hotelAddress}" 
+					placeholder="Input hotel address"/>
+				<Label text="Transportation"/>
+				<Input value="{data/transportation}" 
+					placeholder="Input transportation"/>
+				<Label text="Documentation"/>
+				<Input value="{data/documentation}" 
+					placeholder="Input documentation"/>
+				<Label text="Travel Insurance"/>
+				<Switch type="AcceptReject" state="{data/insurance}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Switch>
+				<Label text="Hotel Paid"/>
+				<Switch type="AcceptReject" state="{data/hotelPaid}">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Switch>
+			</f:content>
+		</f:SimpleForm>
+		<FlexBox width="100%" alignItems="Center" justifyContent="Center">
+			<Button text="Close" type="Reject" press=".onCloseEditView" class="sapUiSmallMargin"/>
+			<Button text="Save" type="Accept" press=".onSaveButtonPress" class="sapUiSmallMargin"/> 
+		</FlexBox>
+	</Dialog>
+</core:FragmentDefinition>	
