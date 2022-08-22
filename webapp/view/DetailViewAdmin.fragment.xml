@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns="sap.m"
+   	xmlns:core="sap.ui.core" 
+	xmlns:c="sap.ui.core" 
+  	xmlns:l="sap.ui.layout"
+   	xmlns:f="sap.ui.layout.form"
+   	xmlns:ui="sap.ui"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<Dialog title="Detail of travel request">
+		<f:SimpleForm>
+			<f:content>
+				<Label text="Hotel"/>
+				<Text text="{data/hotelName} {data/hotelAddress}"/>    
+				<Label text="Transportation"/>
+				<Text text="{data/transportation}"/>
+				<Label text="Documentation"/>
+				<Text text="{data/documentation}"/>
+				<Label text="Travel Insurance" visible="{= ${data/insurance} === true}"/>
+				<Text text="Paid" visible="{= ${data/insurance} === true}"/>
+				<Label text="Travel Insurance" visible="{= ${data/insurance} === false}"/>
+				<Text text=" Not Paid" visible="{= ${data/insurance} === false}"/>
+				<Label text="Hotel Paid" visible="{= ${data/hotelPaid} === true}"/>
+				<Text text="Paid" visible="{= ${data/hotelPaid} === true}"/>
+				<Label text="Hotel Paid" visible="{= ${data/hotelPaid} === false}"/>
+				<Text text="Not Paid" visible="{= ${data/hotelPaid} === false}"/> 
+			</f:content>
+		</f:SimpleForm> 
+		<Button text="Approve"  width="90%" id="approved" type="Accept" press="onApproveButton" class="sapUiSmallMarginBeginEnd"/>
+		<Button text="Deny" width="90%" id="denied" type="Reject" press="onDeniedButton" class="sapUiSmallMarginBeginEnd"/>
+		<Button text="Close" width="90%" press=".onCloseDetailView" class="sapUiSmallMargin"/>
+	</Dialog>
+</core:FragmentDefinition>	
