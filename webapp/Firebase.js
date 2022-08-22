@@ -18,8 +18,8 @@ sap.ui.define(["sap/ui/model/json/JSONModel"], function (JSONModel) {
 
       // Create a Firestore reference
       const firestore = firebase.firestore();
-
       const auth = firebase.auth();
+
       // Firebase services object
       const oFirebase = {
         firestore: firestore,

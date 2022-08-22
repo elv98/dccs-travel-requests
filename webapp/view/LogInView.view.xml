@@ -1,0 +1,20 @@
+<mvc:View controllerName="dccstravelrequests.controller.LogInView"
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form">
+    
+    <VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
+        <form:SimpleForm title="{i18n>title}">
+            <form:content>
+                <Label text="Username"></Label>
+                <Input id="email" placeholder="User ID"></Input>
+                <Label text="Password"></Label>
+                <Input id="password" placeholder="Password" type="Password"></Input>
+            </form:content>
+        </form:SimpleForm>
+        <Button id="loginButton" width="12rem" text="Login" type="Emphasized" press="onLoginClick"/>
+    </VBox>
+</mvc:View>

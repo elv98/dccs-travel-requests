@@ -94,20 +94,60 @@
       },
       "routes": [
         {
-          "name": "RouteMainView",
-          "pattern": ":?query:",
-          "target": [
-            "TargetMainView"
-          ]
+          "name": "RouteLogInView",
+          "pattern": "",
+          "target": ["TargetLogInView"]
+        },
+        {
+          "name": "RouteMainViewContainerUser",
+          "pattern": "",
+          "target": ["TargetMainViewContainerUser"]
+        },
+        {
+          "name": "RouteMainViewContainerEditor",
+          "pattern": "",
+          "target": ["TargetMainViewContainerEditor"]
+        },
+       
+        {
+          "name": "RouteMainViewContainerAdmin",
+          "pattern": "",
+          "target": ["TargetMainViewContainerAdmin"]
         }
       ],
       "targets": {
-        "TargetMainView": {
+        "TargetLogInView": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "MainView",
-          "viewName": "MainView"
+          "viewId": "LogInView",
+          "viewName": "LogInView",
+          "level": 1
+        },
+        "TargetMainViewContainerUser": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "MainViewContainerUser",
+          "viewName": "MainViewContainerUser",
+          "level": 2
+        },
+        "TargetMainViewContainerEditor": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "MainViewContainerEditor",
+          "viewName": "MainViewContainerEditor",
+          "level": 2
+        },
+      
+        "TargetMainViewContainerAdmin": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "MainViewContainerAdmin",
+          "viewName": "MainViewContainerAdmin",
+          "level": 2
         }
       }
     },
