@@ -1,0 +1,40 @@
+<core:FragmentDefinition
+   	xmlns="sap.m"
+   	xmlns:core="sap.ui.core" 
+	xmlns:c="sap.ui.core" 
+  	xmlns:l="sap.ui.layout"
+   	xmlns:f="sap.ui.layout.form"
+   	xmlns:ui="sap.ui"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+	<Dialog title="New Request">
+		<f:SimpleForm id="request">
+			<f:content>
+				<Label text="Name" labelFor="nameInput"/>
+				<Input
+					id="nameInput"
+					value="{/data/name}" 
+					placeholder="First name and lastname"/>
+				<Label text="Place" labelFor="placeInput"/>
+				<Input
+					id="placeInput"
+					value="{/data/place}" 
+					placeholder="Input Place"/>
+				<Label text="Start date" labelFor="dateStart"/>
+				<DateTimeInput
+					id="dateStart"
+					value="{/data/startDate}" 
+					placeholder="Input start date"/>
+				<Label text="End date" labelFor="dateEnd"/>
+				<DateTimeInput
+					id="dateEnd"
+					value="{/data/endDate}" 
+					placeholder="Input end date"/>    
+			</f:content>
+		</f:SimpleForm>
+		<FlexBox width="100%" alignItems="Center" justifyContent="End">
+			<Button text="Cancel" type="Reject" press=".onCancelButtonPress" class="sapUiSmallMargin"/>
+			<Button text="Save" type="Accept"  press=".onSaveButtonPress" class="sapUiSmallMarginEnd"/>
+		</FlexBox>
+	</Dialog>
+</core:FragmentDefinition>	

@@ -1,0 +1,57 @@
+<mvc:View controllerName="dccstravelrequests.controller.RequestListUser"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+ 
+    <Table 
+        id="requestsTable"
+        class="sapUiResponsiveMargin"
+        width="auto"
+        items="{/requests}">
+        <headerToolbar>
+                <Toolbar>
+                    <Button
+                        id="newRequest"
+                        icon="sap-icon://add"
+                        text="New Request"
+                        press=".onOpenDialogNewRequest"/>
+                </Toolbar>
+        </headerToolbar>
+        <columns>
+            <Column hAlign="Center">
+                <Text text="Name and lastname"/>
+            </Column>
+            <Column hAlign="Center">
+                <Text text="Place"/>
+            </Column>
+            <Column hAlign="Center">
+                <Text text="Start"/>
+            </Column>
+            <Column hAlign="Center">
+                <Text text="End"/>
+            </Column>
+            <Column hAlign="Center">
+                <Text text="Status"/>
+            </Column>
+            <Column hAlign="Center">
+                <Text text="Action"/>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{data/name}"/>
+                    <Text text="{data/place}"/>
+                    <Text text="{data/startDate}"/>
+                    <Text text="{data/endDate}"/>
+                    <Text text="{data/approved}"/>
+                    <HBox justifyContent="Center">
+                        <Button icon="sap-icon://show-edit" press=".openTravelRequestDetailView" class="sapUiSmallMargin"/> 
+                        <Button icon="sap-icon://delete" press=".deleteTravelRequest" class="sapUiSmallMargin"/> 
+                    </HBox>
+                </cells>
+            </ColumnListItem> 
+        </items>
+    </Table>
+</mvc:View>

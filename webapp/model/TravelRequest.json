@@ -1,0 +1,17 @@
+{
+    "id": "",
+    "data": {
+        "approved": "Pending",
+        "documentation": "",
+        "name": "",
+        "place": "",
+        "startDate": "",
+        "endDate": "",
+        "hotelAddress": "",
+        "hotelName": "",
+        "hotelPaid": false,
+        "insurance": false,
+        "transportation": "",
+        "uid": ""
+    }
+}
