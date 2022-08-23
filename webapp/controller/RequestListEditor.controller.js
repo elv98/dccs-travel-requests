@@ -8,6 +8,7 @@ sap.ui.define([
   var firebase;
   var firestore; 
   var auth;
+  var unsubscribe;
 
   return Controller.extend("dccstravelrequests.controller.RequestListEditor", {
       
@@ -20,7 +21,7 @@ sap.ui.define([
       // Start observing auth state    
       auth.onAuthStateChanged(editor => {
         if (editor) {
-          var unsubscribe= firestore.collection("travel-requests").where("approved","==","Approved").onSnapshot((querySnapshot) => {
+          unsubscribe= firestore.collection("travel-requests").where("approved","==","Approved").onSnapshot((querySnapshot) => {
             let requests = []
             querySnapshot.forEach((doc) => {
               let travelRequest = {

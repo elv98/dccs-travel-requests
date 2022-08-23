@@ -9,6 +9,7 @@ sap.ui.define([
   var firebase;
   var firestore; 
   var auth;
+  var unsubscribe;
 
   return Controller.extend("dccstravelrequests.controller.RequestListUser", {
 
@@ -23,7 +24,7 @@ sap.ui.define([
       auth.onAuthStateChanged(user => {
         if (user) {
           // User is logged in start observing travel requests collection
-          var unsubscribe = firestore.collection("travel-requests").where("uid", "==", user.uid).onSnapshot((querySnapshot) => {
+          unsubscribe = firestore.collection("travel-requests").where("uid", "==", user.uid).onSnapshot((querySnapshot) => {
             let requests = []
             querySnapshot.forEach((doc) => {
               let travelRequest = {
