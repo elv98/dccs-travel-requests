@@ -65,8 +65,8 @@ sap.ui.define([
     * Save edited travel request
     */
     onSaveButtonPress: function (oEvent) {
-      let oCurrentRequest = oEvent.getSource().getBindingContext().getObject().data;
-      firestore.collection("travel-requests").doc(oCurrentRequest.id).update(oCurrentRequest);
+      let oCurrentRequest = oEvent.getSource().getBindingContext().getObject();
+      firestore.collection("travel-requests").doc(oCurrentRequest.id).update(oCurrentRequest.data);
       this.detailTravelRequestDialog.close();
     },
       
