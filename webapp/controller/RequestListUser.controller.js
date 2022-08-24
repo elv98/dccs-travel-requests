@@ -77,6 +77,7 @@ sap.ui.define([
       let newRequestData = oEvent.getSource().getModel().getData().data;
       if (newRequestData.name && newRequestData.place && newRequestData.startDate && newRequestData.endDate) {
         newRequestData.uid = auth.currentUser.uid
+        newRequestData.userEmail = auth.currentUser.email
         firestore.collection("travel-requests").add(newRequestData).then(() => {
           MessageToast.show("Save succesful");
           this.newRequestDialog.close();

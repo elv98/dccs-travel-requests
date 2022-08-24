@@ -66,7 +66,34 @@ sap.ui.define([
     */
     onSaveButtonPress: function (oEvent) {
       let oCurrentRequest = oEvent.getSource().getBindingContext().getObject();
+      let oCurrentRequestData = oCurrentRequest.data;
       firestore.collection("travel-requests").doc(oCurrentRequest.id).update(oCurrentRequest.data);
+      if(oCurrentRequestData.documentation 
+        && oCurrentRequestData.hotelAddress 
+        && oCurrentRequestData.hotelName 
+        && oCurrentRequestData.transportation 
+        && oCurrentRequestData.insurance
+      ){
+        let hotelPaidForString = "You need to pay for the hotel.";
+        if(oCurrentRequestData.hotelPaid){
+          hotelPaidForString = "Hotel is payed.";
+        }
+        let email = {
+          to: oCurrentRequestData.userEmail,
+          message: {
+            subject: "Travel request confirmation mail.",
+            text: `Hotel name and address: ${oCurrentRequestData.hotelName} ${oCurrentRequestData.hotelAddress}.
+            Transportation: ${oCurrentRequestData.transportation}.
+            ${hotelPaidForString}`
+          },
+        }
+        firestore.collection("mail").add(email).then((docRef) => {
+          console.log("Sending email success!");
+        })
+        .catch((error) => {
+          console.error("Sending email failed!", error);
+        });
+      }
       this.detailTravelRequestDialog.close();
     },
       

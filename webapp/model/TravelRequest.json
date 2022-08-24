@@ -12,6 +12,7 @@
         "hotelPaid": false,
         "insurance": false,
         "transportation": "",
-        "uid": ""
+        "uid": "",
+        "userEmail": ""
     }
 }
