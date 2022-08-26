@@ -55,6 +55,16 @@ sap.ui.define([
       firestore.collection("travel-requests").doc(travelRequest.id).update({
         approved: "Approved",
       });
+      let email = {
+        to: "dccstravelrequesteditor@gmail.com",
+        message: {
+          subject: "Travel request confirmation mail.",
+          text: `Approved travel request for employee ${travelRequest.data.name}. `+
+          'You need to reserve hotel and travel transportation. '+
+          'Buy travel insurance, prepare documentation and make all payments for hotel and transportation.'
+        },
+      }
+      firestore.collection("mail").add(email)
     },
    
     /**

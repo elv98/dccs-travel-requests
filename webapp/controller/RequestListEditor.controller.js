@@ -79,12 +79,12 @@ sap.ui.define([
           hotelPaidForString = "Hotel is payed.";
         }
         let email = {
-          to: oCurrentRequestData.userEmail,
+          to: "dccstravelrequestsuser@gmail.com",
           message: {
             subject: "Travel request confirmation mail.",
-            text: `Hotel name and address: ${oCurrentRequestData.hotelName} ${oCurrentRequestData.hotelAddress}.
-            Transportation: ${oCurrentRequestData.transportation}.
-            ${hotelPaidForString}`
+            text: `Hotel name and address: ${oCurrentRequestData.hotelName} ${oCurrentRequestData.hotelAddress}.\n`
+            +`Transportation: ${oCurrentRequestData.transportation}.\n`
+            +`${hotelPaidForString}`
           },
         }
         firestore.collection("mail").add(email).then((docRef) => {
