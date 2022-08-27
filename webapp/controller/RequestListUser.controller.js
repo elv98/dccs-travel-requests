@@ -58,15 +58,15 @@ sap.ui.define([
           "dccstravelrequests.view.NewRequest",
           this
         );
-        let oModel = new JSONModel(
-          sap.ui.require.toUrl("dccstravelrequests/model/TravelRequest.json")
-        );
-        this.newRequestDialog.setModel(oModel);
       }
       let oModel = new JSONModel(
         sap.ui.require.toUrl("dccstravelrequests/model/TravelRequest.json")
       );
-      this.newRequestDialog.getModel().setData(oModel)
+      this.newRequestDialog.setModel(oModel);
+      let oData = new JSONModel(
+        sap.ui.require.toUrl("dccstravelrequests/model/TravelRequest.json")
+      );
+      this.newRequestDialog.getModel().setData(oData)
       this.newRequestDialog.open();
     },
       
