@@ -14,8 +14,11 @@ Video demo of how this project works can be found [here](https://mega.nz/file/iA
 
 ## Building project
 
-To build this project first you need OpenUI5 installed on your machine. Tutorial for installing OpenUI5 can be found [here](https://sapui5.hana.ondemand.com/sdk/#/topic/ee8726adfdb34d748ed199f0275472f8.html).
-After installing OpenUI5 project can be built and served with command
+To build this project first you need OpenUI5 installed on your machine. Tutorial for installing OpenUI5 can be found [here](https://sapui5.hana.ondemand.com/sdk/#/topic/ee8726adfdb34d748ed199f0275472f8.html). After installing OpenUI5 you need to install sap-ux-ui tooling with this command
+```bash
+npm i @sap/ux-ui5-tooling --@sap:registry=https://registry.npmjs.org
+```
+After installing OpenUI5 and sap-ux-ui-tooling project can be built and served with command
 
 ```bash
 ui5 serve
